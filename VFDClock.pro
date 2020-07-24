@@ -1,4 +1,4 @@
-update=2020/07/24 14:16:09
+update=2020/07/24 19:38:15
 version=1
 last_client=kicad
 [cvpcb]
@@ -234,6 +234,17 @@ dPairWidth=0.2
 dPairGap=0.25
 dPairViaGap=0.25
 [pcbnew/Netclasses/1]
+Name=GND
+Clearance=0.2
+TrackWidth=0.6
+ViaDiameter=0.65
+ViaDrill=0.4
+uViaDiameter=0.3
+uViaDrill=0.1
+dPairWidth=0.2
+dPairGap=0.25
+dPairViaGap=0.25
+[pcbnew/Netclasses/2]
 Name=Power
 Clearance=0.2
 TrackWidth=0.6
