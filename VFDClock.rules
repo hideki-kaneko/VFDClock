@@ -11,7 +11,7 @@
     (via_costs 50)
     (plane_via_costs 5)
     (start_ripup_costs 100)
-    (start_pass_no 1825)
+    (start_pass_no 2025)
     (layer_rule F.Cu
       (active on)
       (preferred_direction horizontal)
@@ -31,32 +31,38 @@
     (clear 125.0 (type smd_to_turn_gap))
     (clear 50.0 (type smd_smd))
   )
-  (padstack "Via[0-1]_600:400_um"
+  (padstack "Via[0-1]_650:400_um"
     (shape
-      (circle F.Cu 600.0 0.0 0.0)
+      (circle F.Cu 650.0 0.0 0.0)
     )
     (shape
-      (circle B.Cu 600.0 0.0 0.0)
+      (circle B.Cu 650.0 0.0 0.0)
     )
     (attach off)
   )
   (via 
-    "Via[0-1]_600:400_um" "Via[0-1]_600:400_um" default
+    "Via[0-1]_650:400_um" "Via[0-1]_650:400_um" default
   )
   (via 
-    "Via[0-1]_600:400_um-kicad_default" "Via[0-1]_600:400_um" "kicad_default"
+    "Via[0-1]_650:400_um-kicad_default" "Via[0-1]_650:400_um" "kicad_default"
   )
   (via 
-    "Via[0-1]_600:400_um-Power" "Via[0-1]_600:400_um" Power
+    "Via[0-1]_650:400_um-GND" "Via[0-1]_650:400_um" GND
+  )
+  (via 
+    "Via[0-1]_650:400_um-Power" "Via[0-1]_650:400_um" Power
   )
   (via_rule
-    default "Via[0-1]_600:400_um"
+    default "Via[0-1]_650:400_um"
   )
   (via_rule
-    "kicad_default" "Via[0-1]_600:400_um-kicad_default"
+    "kicad_default" "Via[0-1]_650:400_um-kicad_default"
   )
   (via_rule
-    Power "Via[0-1]_600:400_um-Power"
+    GND "Via[0-1]_650:400_um-GND"
+  )
+  (via_rule
+    Power "Via[0-1]_650:400_um-Power"
   )
   (class default
     (clearance_class default)
@@ -69,9 +75,8 @@
     )
   )
   (class "kicad_default"
-    GND "/A4(SDA)" "/A5(SCL)" /c /d /e /f /g
-    /a /b "Net-(Q1-Pad3)" /dp "Net-(Q1-Pad1)" "Net-(Q2-Pad3)" "Net-(Q2-Pad1)" "Net-(Q3-Pad3)"
-    "Net-(Q3-Pad1)" "Net-(Q4-Pad3)" "Net-(Q4-Pad1)" "Net-(Q5-Pad3)" "Net-(Q5-Pad1)" "Net-(Q6-Pad3)" "Net-(Q6-Pad1)"
+    "/A4(SDA)" "/A5(SCL)" /c /d /e /f /g /a
+    /b "Net-(Q1-Pad3)" /dp "Net-(Q2-Pad3)" "Net-(Q3-Pad3)" "Net-(Q4-Pad3)" "Net-(Q5-Pad3)" "Net-(Q6-Pad3)"
     (clearance_class "kicad_default")
     (via_rule kicad_default)
     (rule
@@ -81,8 +86,19 @@
       (use_layer F.Cu B.Cu)
     )
   )
+  (class GND
+    GND
+    (clearance_class GND)
+    (via_rule GND)
+    (rule
+      (width 600.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
   (class Power
-    +5V +12V
+    +5V "Net-(Q1-Pad1)" "Net-(Q2-Pad1)" "Net-(Q3-Pad1)" "Net-(Q4-Pad1)" +12V "Net-(Q5-Pad1)" "Net-(Q6-Pad1)"
     (clearance_class Power)
     (via_rule Power)
     (rule
