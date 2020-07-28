@@ -1254,17 +1254,6 @@ F 3 "" H 3500 3900 50  0001 C CNN
 	1    3500 3900
 	0    1    1    0   
 $EndComp
-$Comp
-L Transistor_Array:TBD62783A U4
-U 1 1 5F2B7001
-P 3500 6100
-F 0 "U4" H 3500 6781 50  0000 C CNN
-F 1 "TBD62783APG" H 3500 6690 50  0000 C CNN
-F 2 "Package_DIP:DIP-18_W7.62mm" H 3500 5550 50  0001 C CNN
-F 3 "http://toshiba.semicon-storage.com/info/docget.jsp?did=30523&prodName=TBD62783APG" H 3200 6500 50  0001 C CNN
-	1    3500 6100
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	3900 5800 5650 5800
 Wire Wire Line
@@ -1277,8 +1266,6 @@ Wire Wire Line
 	3900 6000 7750 6000
 Wire Wire Line
 	3900 5900 6700 5900
-NoConn ~ 3100 6400
-NoConn ~ 3100 6500
 $Comp
 L power:GND #PWR0119
 U 1 1 5F2CCC83
@@ -1301,10 +1288,48 @@ F 3 "" H 3500 5600 50  0001 C CNN
 	1    3500 5600
 	0    1    1    0   
 $EndComp
-NoConn ~ 3900 6400
-NoConn ~ 3900 6500
 Text Notes 2050 900  0    50   ~ 0
 LD8035E\nGrid: 12V / 0.85mA\nHeater: 0.8V / 26mA
+$Comp
+L Transistor_Array:TBD62783A U4
+U 1 1 5F2B7001
+P 3500 6100
+F 0 "U4" H 3500 6781 50  0000 C CNN
+F 1 "TBD62783APG" H 3500 6690 50  0000 C CNN
+F 2 "Package_DIP:DIP-18_W7.62mm" H 3500 5550 50  0001 C CNN
+F 3 "http://toshiba.semicon-storage.com/info/docget.jsp?did=30523&prodName=TBD62783APG" H 3200 6500 50  0001 C CNN
+	1    3500 6100
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5F215EAA
+P 3100 6600
+F 0 "#PWR?" H 3100 6350 50  0001 C CNN
+F 1 "GND" H 3105 6427 50  0000 C CNN
+F 2 "" H 3100 6600 50  0001 C CNN
+F 3 "" H 3100 6600 50  0001 C CNN
+	1    3100 6600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3100 6400 3100 6500
+Connection ~ 3100 6500
+Wire Wire Line
+	3100 6500 3100 6600
+$Comp
+L power:GND #PWR?
+U 1 1 5F22AE7A
+P 3900 6600
+F 0 "#PWR?" H 3900 6350 50  0001 C CNN
+F 1 "GND" H 3905 6427 50  0000 C CNN
+F 2 "" H 3900 6600 50  0001 C CNN
+F 3 "" H 3900 6600 50  0001 C CNN
+	1    3900 6600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3900 6400 3900 6500
 Wire Bus Line
 	10100 3800 10100 4750
 Wire Bus Line
@@ -1319,4 +1344,7 @@ Wire Bus Line
 	4150 3800 4150 4700
 Wire Bus Line
 	4700 3800 4700 4750
+Connection ~ 3900 6500
+Wire Wire Line
+	3900 6500 3900 6600
 $EndSCHEMATC
